@@ -33,4 +33,6 @@
   (bisect_ppx :with-test)
   (odoc :with-doc)
 
-  (ocamlformat (and (= 0.27.0) :with-dev-setup))))
+  (ocamlformat (and (= 0.27.0) :with-dev-setup))
+  (ocaml-lsp-server :with-dev-setup)
+  (utop :with-dev-setup)))
