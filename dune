@@ -9,6 +9,8 @@
 
 (rule
  (alias discover)
+ (deps
+  (env_var CC_AMD64))
  (targets cc_rv64 cc_amd64)
  (action
   (run ./discover.exe)))
