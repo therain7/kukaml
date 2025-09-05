@@ -771,6 +771,7 @@ and pp_vb ppf (rec_flag, pat, p) =
   | _ -> fprintf ppf "=@ @]@[%a@]@]" pp_p p
 
 and no_pars ppf = pp_triv ~ps:false ppf
+
 and maybe_pars ppf = pp_triv ~ps:true ppf
 
 let ds_expr_to_expr ds_expr =
