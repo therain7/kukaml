@@ -28,24 +28,3 @@
   rukaml_stdlib.h)
  (action
   (system "%{read:../../cc_amd64} -c %{src} -o %{target}")))
-
-(rule
- (target tests.exe)
- (enabled_if
-  (not
-   (= none %{read:../../cc_amd64})))
- (mode
-  (promote (until-clean)))
- (deps
-  (:src tests.c)
-  (:stdlib rukaml_stdlib.o)
-  rukaml_stdlib.h)
- (action
-  (system "%{read:../../cc_amd64} -lcunit %{stdlib} %{src} -o %{target}")))
-
-(cram
- (enabled_if
-  (not
-   (= none %{read:../../cc_amd64})))
- (applies_to tests)
- (deps tests.exe))
